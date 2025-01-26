@@ -1,0 +1,19 @@
+syntax = "proto3";
+package productInfo;
+option go_package = "/productInfo";
+
+service ProductInfo {
+  rpc addProduct(Product) returns (ProductID);
+  rpc getProduct(ProductID) returns (Product);
+}
+
+message Product {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  double price = 4;
+}
+
+message ProductID {
+  int64 id = 1;
+}
